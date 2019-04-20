@@ -33,21 +33,35 @@ def readcsv():
     howbeautiful = np.delete(howbeautiful, 0)
     return howhappy, howsatisfied, howsafe, sex, age, income, howbeautiful
 
+'''
+Even though these functions will just be imported to a driver, 
+if you read perform the functions in top-->bottom order, this should be
+where the cleaning functions are run. (because they have to be run before )
+'''
+
+
+
 howhappy, howsatisfied, howsafe, sex, age, income, howbeautiful = readcsv()
 # Below creates a "classification" array whose value is 1 if x-array[index] AND y-array[index] both exist
-incomeandhappy = np.zeros(income)
-sexandsafe = np.zeros(howsafe)
-ageandhappy = np.zeros(age)
-incomeandbeauty = np.zeros(income)
-index = 0
-while index < len(income):
-    try:
-        
+def createclassarrays(income, howsafe, age):
+    incomeandhappy = np.zeros(income)
+    sexandsafe = np.zeros(howsafe)
+    ageandhappy = np.zeros(age)
+    incomeandbeauty = np.zeros(income)
+    return incomeandhappy, sexandsafe, ageandhappy, incomeandbeauty
 
-
-
-
-
+def createclasses(array1, array2, classarray):
+    index = 0
+    while index < len(array1):
+        try:
+            array1[index] = float(array1[index])
+            array2[index] = float(array2[index])
+            classarray[index] = 1
+            index = index+1
+        except:
+            classarray[index] = 0
+            index = index+1
+    return classarray
 
 
 
@@ -57,7 +71,7 @@ Correlations:
     income (x axis) and happiness (y axis)
     sex and how safe they feel (clustering where male and female is the classification and howsafe is x AND y axis
     age (x axis) and happiness (y axis)
-    income (x axis) and satisfaction of beauty of neighborhood (y axis)
+    income (x axis) and how satisfied with beauty of neighborhood (y axis)
     
     
     

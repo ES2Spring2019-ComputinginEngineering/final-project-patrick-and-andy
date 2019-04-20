@@ -1,15 +1,20 @@
-"""This is the python file that your instructors will run to test your code
-make sure it runs correctly when someone downloads your repository. You 
-might want to test this on a classmates computer to be sure it works!""
-
-# This files should not contain any function defitions
-
-
 # IMPORT STATEMENTS
-
-
+from csvreader import readcsv#, createclasses, createclassarrays
+from cleaningarrays import clean #, normalize
 
 
 # DEMONSTRATION CODE
-
-
+howhappy, howsatisfied, howsafe, sex, age, income, howbeautiful = readcsv()
+print("done1")#debug
+income, age, sex = clean(income, age, sex)
+print('done2')
+incomeandhappy, sexandsafe, ageandhappy, incomeandbeauty = createclassarrays(income, sex, age)
+print('done3')
+'''
+incomeandhappy = createclasses(income, howhappy, incomeandhappy)
+print('done4')
+sexandsafe = createclasses(sex, howsafe, sexandsafe)
+ageandhappy = createclasses(age, howhappy, ageandhappy)
+incomeandbeauty = createclasses(income, howbeautiful, incomeandbeauty)
+normalize(income, howhappy, howsatisfied, howsafe, age)
+'''
