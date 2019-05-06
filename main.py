@@ -2,7 +2,7 @@
 from csvreader import readcsv, createclasses, createclassarrays
 from cleaningarrays import cleaning, floating, normalize
 from clustering import iterate, createinitialcentroids, checkaccuracy
-from regression import pandasframe, linearregression, incomehappiness, agehappiness, incomebeauty
+from regression import pandasframe, incomehappiness, agehappiness, incomebeauty
 import numpy as np
 
 howhappy, howsatisfied, howsafe, sex, age, income, howbeautiful = readcsv()
